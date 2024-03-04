@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
 public class Ejercicio2 {
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean salir = false;
+        do {
         SolucionEjercicios ejercicios= new SolucionEjercicios();
         // entrada
         System.out.println("1. Aplicación de Suma");
@@ -19,6 +23,15 @@ public class Ejercicio2 {
         //salida
         System.out.println("La suma de sus dos números es :" + result);
 
+            System.out.println("¿Desea salir? Ingrese 99 para salir o cualquier otro número para continuar:");
+            int opcion = scanner.nextInt();
 
+            if (opcion == 99) {
+                salir = true;
+                System.out.println("Saliendo del programa...");
+            }
+        }while (!salir);
+
+        scanner.close();
     }
 }

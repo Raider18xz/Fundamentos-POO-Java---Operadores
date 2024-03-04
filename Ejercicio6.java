@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Ejercicio6 {
     public static void main( String[] args )
     {
+        Scanner scanner = new Scanner(System.in);
+        boolean salir = false;
+        do {
         SolucionEjercicios ejercicios = new SolucionEjercicios();
 
         // entrada
@@ -18,7 +21,17 @@ public class Ejercicio6 {
         double result2 = ejercicios.VolumenCinlindro(Num1,Num2);
 
         System.out.println( "El Área es :" + result + " El volumen es " + result2 );
+            System.out.println("¿Desea salir? Ingrese 99 para salir o cualquier otro número para continuar:");
 
+            int opcion = scanner.nextInt();
+
+            if (opcion == 99) {
+                salir = true;
+                System.out.println("Saliendo del programa...");
+            }
+        }while (!salir);
+
+        scanner.close();
 
     }
 }
